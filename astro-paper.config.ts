@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://hellenwang.github.io/",
     title: "Harley — Cloud-Native Engineer & Web Developer",
-    description: "Building fast websites and AI-powered backends. Ex-Alibaba Cloud Tech Lead, 5 years running infrastructure for 600K+ servers and 5M+ VMs.",
+    description: "Backend and cloud engineer, 12 years in. Six at Alibaba Cloud running the IaaS platform. Now building websites and AI infrastructure.",
     author: "Harley",
     profile: "https://github.com/HellenWang",
     ogImage: "default-og.jpg",
@@ -29,7 +29,7 @@ export default defineAstroPaperConfig({
   },
   socials: [
     { name: "github",   url: "https://github.com/HellenWang" },
-    { name: "mail",     url: "mailto:harley@hellenwang.dev" },
+    { name: "mail",     url: "mailto:wanghanlin12@gmail.com" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

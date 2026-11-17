@@ -1,38 +1,43 @@
 ---
 title: "About"
-description: "Harley — Cloud-Native Engineer & Web Developer. Ex-Alibaba Cloud Tech Lead."
+description: "About Harley — backend engineer, 12 years in, former Alibaba Cloud tech lead."
 ---
 
 ## Hi, I'm Harley
 
-I build fast websites and AI-powered backends. For 5 years, I led infrastructure at Alibaba Cloud — automating operations across 600K+ physical servers and 5M+ virtual machines / containers.
+I'm a backend and cloud engineer. Been at this about 12 years, six of them at Alibaba Cloud where I led the IaaS platform team.
 
-### What I Do
+We're talking 600,000+ physical machines and over 5 million VMs and containers. When you're responsible for infrastructure that size, you stop thinking about individual servers. You think about failure domains, automation, and what happens at 3am when something breaks.
 
-- **Website Development** — Shopify / WordPress / Astro — fast, clean, production-ready
-- **Performance Optimization** — Core Web Vitals, CDN, caching, Lighthouse 95+
-- **AI Integration** — ChatGPT/Claude API, chatbots, recommendation engines
-- **Cloud-Native Infrastructure** — K8s deployment, GPU scheduling, model serving
+These days I do two things: I build websites for people who need them fast and reliable, and I help companies run AI models on hardware they control instead of renting it from someone else's API.
 
-### Track Record
+### What I do
 
-**5 years at Alibaba Cloud** — Led the IaaS platform team behind 600K+ physical servers and 5M+ VMs/containers. Built automation systems that executed 1,000+ on-site upgrades without major incidents. Designed fault self-healing and automated scheduling for public cloud software deployment.
+Most of my work lands in two buckets.
 
-**Before that** — Shipped backend systems at DiDi (Go) serving millions of daily map navigation requests. Built containerized deployment platforms at IBM. 10 years of production engineering.
+**Websites.** Mostly Shopify and WordPress, sometimes Astro if the project calls for it. I care a lot about load times — if a page takes five seconds to open, nothing else about it matters.
 
-### Tech Stack
+**AI infrastructure.** Getting models to run on your own cluster. Kubernetes, GPU scheduling, keeping inference costs from getting silly. This is the stuff I did at Alibaba for years, just at a smaller scale now.
 
-- **Backend**: Go, Gin, gRPC, PostgreSQL, Redis
-- **Cloud-Native**: Kubernetes, Docker, Terraform, Helm
-- **Frontend**: Astro, TailwindCSS, HTML/CSS
-- **Platforms**: Shopify, WordPress, Webflow
+### A bit of background
 
-### Why Work With Me
+I joined Alibaba in late 2020 and stayed a bit over six years. My team owned fault self-healing, automated upgrades, and software scheduling for the public cloud. We did more than a thousand on-site upgrades without a major incident, which at that scale is mostly a story about automation and paranoia.
 
-- You get an engineer who has run production at 600K+ server scale — I know what breaks and how to prevent it
-- I write code that won't fail under traffic spikes because I've seen what failure looks like at 5M-container scale
-- I understand both infrastructure and product — you won't need two contractors
+Before Alibaba I spent two years at DiDi writing Go for the maps navigation backend. Before that, container deployment tooling at IBM. That's where I caught the infrastructure bug.
 
-### Let's Talk
+### Tech I use day to day
 
-I'm available for freelance projects. Reach me on [GitHub](https://github.com/HellenWang) or email.
+- Go, mostly. Some Python when I have to.
+- Kubernetes, Docker, Helm, Terraform.
+- Astro, TailwindCSS, and enough CSS to get by.
+- Shopify and WordPress for client work.
+
+### Why me
+
+You'll get someone who's actually run production at scale, not just read about it. I've been on call for systems that couldn't go down, so I tend to build things that don't need babysitting.
+
+I also cover the whole stack. Plenty of people can build you a website. Fewer can build the site, wire up the API behind it, and tell you why your servers are getting slow.
+
+### Get in touch
+
+Got something in mind? Email me at [wanghanlin12@gmail.com](mailto:wanghanlin12@gmail.com). I usually reply within a day.

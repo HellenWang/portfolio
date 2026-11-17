@@ -1,41 +1,41 @@
 ---
-title: "From 600K Servers to Solopreneur: Why I'm Building My Own Thing"
-description: "After 5 years running infrastructure at Alibaba Cloud, I'm going independent. Here's what I learned and where I'm heading."
+title: "Leaving Alibaba Cloud after six years"
+description: "Why I'm going independent, and what I'm up to now."
 pubDatetime: 2026-11-17T00:00:00Z
 modDatetime: 2026-11-17T00:00:00Z
 tags: ["career", "entrepreneurship"]
 draft: false
 ---
 
-## The Scale
+## First, some context
 
-For 5 years, I was Tech Lead on the IaaS Platform team at Alibaba Cloud. Our domain: 600K+ physical servers, 5M+ virtual machines and containers, 100+ internal services, and over 1,000 on-site upgrades executed without major incidents.
+For six years I was tech lead on the IaaS platform team at Alibaba Cloud. We owned 600K+ physical servers, 5 million-plus VMs and containers, and a hundred-odd internal services. We pulled off more than a thousand on-site upgrades without a major incident.
 
-That number — 600K physical, 5M virtual — sounds abstract until you're the one on call.
+People sometimes ask what that scale feels like. Honestly? It feels like you can never fix anything by hand again. The moment you've got 600,000 machines, every manual step is a ticking time bomb. So you automate it. Then you automate the automation, because the first version breaks in ways you didn't expect.
 
-## What I Learned
+## Things I learned the hard way
 
-**Infrastructure is invisible until it breaks.** When everything works, nobody notices. When it doesn't, everything stops. This taught me to design systems that fail gracefully, not just systems that work.
+**Boring is good.** The systems that survived were never the clever ones. They were the ones with predictable behavior and no surprises. I got very suspicious of anything that needed a human to babysit it.
 
-**Automation is not optional at scale.** You cannot manually manage 600K servers. Every process — deployment, monitoring, self-healing, upgrade — must be automated, tested, and repeatable. I spent years building the tooling that makes this possible.
+**The gap between "works locally" and "works in production" is bigger than most people think.** I spent years on the other side of that gap, dealing with what happens when code meets real traffic and real hardware failures. You can't learn that from a tutorial.
 
-**The gap between "works on my machine" and "works in production" is enormous.** Most developers never cross this gap. I lived on the other side.
+**Most outages come from changes, not load.** Which is why I got obsessed with rollouts, rollbacks, and making every deployment reversible.
 
-## Why Independent
+## Why I left
 
-Two reasons:
+Two reasons, mostly.
 
-1. **I want to build things I own.** In a large org, your work serves the org's goals. I want to serve my own goals — building products and services that directly create value for clients.
+I wanted to build things I own. At a big company your work serves the company's goals. That's fine, but after a while I wanted to see the direct line between what I build and the person using it.
 
-2. **The AI infrastructure wave is just starting.** Companies need help deploying AI on their own infrastructure — not just calling APIs. My background maps directly to this problem.
+And AI infrastructure is where the interesting problems are right now. A lot of companies want to run models on their own hardware — for data reasons, cost reasons, or just because they don't want to be locked into someone's API. That's a problem I've spent years working on, just with different workloads.
 
-## What I'm Building Now
+## What I'm doing now
 
-Two parallel tracks:
+Two things, at least for now:
 
-- **Independent web development** — building fast, reliable websites for businesses worldwide. Shopify, WordPress, custom backends in Go.
-- **AI infrastructure services** — helping companies deploy and optimize AI models on their own Kubernetes clusters. Private deployments, GPU optimization, cost reduction.
+- Building websites. Shopify, WordPress, and custom Go backends when a project needs something the platforms can't do.
+- Helping teams deploy and run AI models on their own Kubernetes clusters.
 
-This blog is where I document the journey — technical deep-dives, lessons learned, and occasional rants about badly designed infrastructure.
+I'll use this space to write about the work — things that broke, things that worked, and occasionally a rant about badly designed infrastructure.
 
-Let's see where this goes.
+Questions or want to talk shop: [wanghanlin12@gmail.com](mailto:wanghanlin12@gmail.com).
