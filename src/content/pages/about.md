@@ -19,6 +19,14 @@ Most of my work lands in two buckets.
 
 **AI infrastructure.** Getting models to run on your own cluster. Kubernetes, GPU scheduling, keeping inference costs from getting silly. This is the stuff I did at Alibaba for years, just at a smaller scale now.
 
+### Two things I'm exploring
+
+These are early, so treat them as directions I'm actively working through rather than finished products.
+
+**A fully managed serverless AI platform.** The idea is that you shouldn't have to think about GPUs, scaling, or cold starts to run a model. You write code, it runs, you pay for what you used. It's the same class of infrastructure problem I spent six years on at Alibaba, applied to AI workloads.
+
+**A multimodal generation engine.** Feeding it one input and getting out text, images, audio, and video. The interesting part isn't any single model — it's chaining them together so the whole thing runs end to end without a human in the loop.
+
 ### A bit of background
 
 I joined Alibaba in late 2020 and stayed a bit over six years. My team owned fault self-healing, automated upgrades, and software scheduling for the public cloud. We did more than a thousand on-site upgrades without a major incident, which at that scale is mostly a story about automation and paranoia.

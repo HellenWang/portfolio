@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://hellenwang.github.io/",
     title: "Harley — Cloud-Native Engineer & Web Developer",
-    description: "Backend and cloud engineer, 12 years in. Six at Alibaba Cloud running the IaaS platform. Now building websites and AI infrastructure.",
+    description: "Backend and cloud engineer, 12 years in. Six at Alibaba Cloud running IaaS. Building websites and AI infrastructure. Exploring serverless AI and multimodal generation.",
     author: "Harley",
     profile: "https://github.com/HellenWang",
     ogImage: "default-og.jpg",
