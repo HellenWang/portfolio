@@ -5,7 +5,7 @@ description: "Harley — Cloud-Native Engineer & Web Developer. Ex-Alibaba Cloud
 
 ## Hi, I'm Harley
 
-I build fast websites and AI-powered backends. For 5 years, I ran infrastructure at Alibaba Cloud — the team behind 400,000+ servers.
+I build fast websites and AI-powered backends. For 5 years, I led infrastructure at Alibaba Cloud — automating operations across 600K+ physical servers and 5M+ virtual machines / containers.
 
 ### What I Do
 
@@ -14,13 +14,11 @@ I build fast websites and AI-powered backends. For 5 years, I ran infrastructure
 - **AI Integration** — ChatGPT/Claude API, chatbots, recommendation engines
 - **Cloud-Native Infrastructure** — K8s deployment, GPU scheduling, model serving
 
-### Experience
+### Track Record
 
-| Period | Company | Role |
-|---|---|---|
-| 2020.12 – 2026.04 | Alibaba Cloud | Tech Lead, IaaS Platform |
-| 2018 – 2020 | DiDi | Backend Engineer (Golang) |
-| 2016 – 2018 | IBM CDL | Cloud Engineer |
+**5 years at Alibaba Cloud** — Led the IaaS platform team behind 600K+ physical servers and 5M+ VMs/containers. Built automation systems that executed 1,000+ on-site upgrades without major incidents. Designed fault self-healing and automated scheduling for public cloud software deployment.
+
+**Before that** — Shipped backend systems at DiDi (Go) serving millions of daily map navigation requests. Built containerized deployment platforms at IBM. 10 years of production engineering.
 
 ### Tech Stack
 
@@ -31,8 +29,8 @@ I build fast websites and AI-powered backends. For 5 years, I ran infrastructure
 
 ### Why Work With Me
 
-- You get an engineer who has run production at 400K-server scale
-- I write code that won't break under traffic spikes
+- You get an engineer who has run production at 600K+ server scale — I know what breaks and how to prevent it
+- I write code that won't fail under traffic spikes because I've seen what failure looks like at 5M-container scale
 - I understand both infrastructure and product — you won't need two contractors
 
 ### Let's Talk
