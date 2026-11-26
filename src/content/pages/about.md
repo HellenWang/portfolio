@@ -25,7 +25,7 @@ These are early, so treat them as directions I'm actively working through rather
 
 **A fully managed serverless AI platform.** The idea is that you shouldn't have to think about GPUs, scaling, or cold starts to run a model. You write code, it runs, you pay for what you used. It's the same class of infrastructure problem I spent six years on at Alibaba, applied to AI workloads.
 
-**A multimodal generation engine.** Feeding it one input and getting out text, images, audio, and video. The interesting part isn't any single model — it's chaining them together so the whole thing runs end to end without a human in the loop.
+**A multimodal generation engine.** One input in, text, images, audio and video out. I'm working on chaining the models together so a job runs end to end without a human in the loop.
 
 ### A bit of background
 
