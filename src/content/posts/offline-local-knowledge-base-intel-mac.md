@@ -2,26 +2,26 @@
 title: "A knowledge base that works with the network unplugged"
 description: "I put contracts, policies and quotes into a local RAG stack on a CPU-only Intel Mac. Here's the setup that worked and the five things that wasted my time."
 pubDatetime: 2026-11-26T04:00:00Z
-modDatetime: 2026-11-26T04:00:00Z
+modDatetime: 2026-11-26T05:30:00Z
 tags: ["ai", "local-llm", "rag"]
 draft: false
 ---
 
 I've spent 11 years building infrastructure, most of it around automation. Recently I wanted to ask questions about my own contracts and internal docs without shipping anything to a cloud API. So I tried the fully local route on an Intel Mac with no discrete GPU.
 
-It works. It's slow, and it will make things up if you let it. This is the setup I settled on, plus the parts that cost me time.
+It runs offline. Answers take tens of seconds, and the model still invents things if the prompt lets it. This is the setup I settled on, plus the parts that cost me time.
 
 ## What RAG is, without the jargon
 
-A language model is good at language and bad at knowing your house rules. Ask it what the penalty clause in your contract says and it doesn't know. Ask nicely and it will produce something that sounds exactly like a penalty clause. That's the hallucination problem.
+A model hasn't read your contract. Ask it what the penalty clause says and it has no way to know. It will answer anyway, and the answer will sound plausible. That's the hallucination problem.
 
 RAG just hands the model a few passages from your own documents before it answers. Here's the source, now talk about this.
 
-You can't dump a 5,000-word contract into a 3B model on CPU. The context blows up, everything crawls, and the model loses the thread. So you cut the document into chunks. Cut it too cleanly and you split a condition in half, so you leave about 15% to 20% overlap between neighbours.
+You can't dump a 5,000-word contract into a 3B model on CPU. The context window fills up, the model loses the point, and everything gets slow. So you cut the document into chunks. Cut it too cleanly and you split a condition in half, so you leave about 15% to 20% overlap between neighbours.
 
 bge-m3 turns each chunk into a vector, a set of numbers that represents meaning rather than exact words. Those vectors live in LanceDB on your own disk. Ask a question and the system pulls the chunks whose meaning is closest.
 
-Top-K of 4 to 6. Temperature 0.1. Query mode only, so the model reads from the workspace instead of freelancing. I left hybrid search and reranking alone. With a few dozen to a few hundred documents, chunking and Top-K matter far more than the fancy layers. Add those when you actually have the scale for them.
+Top-K of 4 to 6. Temperature 0.1. Query mode only, so the model reads from the workspace instead of freelancing. I left hybrid search and reranking alone. With a few dozen to a few hundred documents, chunking and Top-K mattered far more. Add the extra layers once you actually have the scale for them.
 
 ## The tools
 
@@ -64,7 +64,7 @@ Workspace:
 - Similarity threshold: No restriction (0.0)
 - Top-K: 4 to 6
 
-The workflow matters as much as the settings. Import a document, hit Move to Workspace, then Save and Embed. Start a new thread for each question so old context doesn't drag a small model off course. And click Show Citations every time. That's how you check whether the answer came from your document or from the model's imagination.
+The clicking order matters too. Import a document, hit Move to Workspace, then Save and Embed. Start a new thread for each question so old context doesn't drag a small model off course. Click Show Citations every time. It's the only reliable check I found on whether the answer came from your document.
 
 ## Five things that bit me
 
@@ -72,7 +72,7 @@ The workflow matters as much as the settings. Import a document, hit Move to Wor
 
 **2. Turn off the proxy.** Any TUN mode or system proxy that intercepts local ports will produce weird errors when pulling models, computing vectors, or testing the offline setup. Quit it before you start measuring anything.
 
-**3. Don't make a CPU fight a big model.** I tried qwen3:4b first. Its default context window pushed memory up until the machine stalled, and thinking was slow. The 1.5b model was quick but bad at following instructions. qwen2.5:3b with context capped at 4096 to 8192 is the compromise I landed on.
+**3. A 4B model was too much for this CPU.** I tried qwen3:4b first. Its default context window pushed memory up until the machine stalled, and thinking was slow. The 1.5b model was quick but bad at following instructions. qwen2.5:3b with context capped at 4096 to 8192 is the compromise I landed on.
 
 **4. I switched clients, and the reason wasn't the UI.** With Cherry Studio, a 3B model didn't reliably trigger `/api/embed` when it had to decide intent or call a tool. It kept falling back to plain chat. AnythingLLM does deterministic retrieval, puts the parameters where you can see them, and makes citations one click away.
 
@@ -118,7 +118,7 @@ You are a strict compliance and clause-extraction assistant. Extract only from t
 
 ## Where I'd use it, and where I wouldn't
 
-This is a good fit for a few dozen to a few hundred contracts, policies, quote sheets, manuals or tech notes that you need to search offline. No cloud dependency, no API bill, and you can follow every answer back to the original paragraph. I treat it as a paragraph-finding assistant. A human still makes the call after reading the source.
+This is a good fit for a few dozen to a few hundred contracts, policies, quote sheets, manuals or tech notes that you need to search offline. You can trace every answer back to a paragraph. I treat it as a paragraph-finding assistant. A human still makes the call after reading the source.
 
 It's a bad fit if you want instant replies or multi-step arithmetic. On CPU, a 3B model often takes tens of seconds to answer. Cross-document fine-grained comparison and classification into close numeric ranges will trip it up. For that, I'd rather use a bigger model with a bigger machine.
 
